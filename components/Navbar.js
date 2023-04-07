@@ -1,0 +1,144 @@
+import React, { useEffect, useState } from "react";
+import {
+	AiOutlineUser,
+	AiOutlineShop,
+	AiOutlineTrophy,
+	AiOutlineUserSwitch,
+	AiOutlineBars,
+	AiOutlineLogout,
+	AiTwotoneHeart,
+	AiOutlineHeart,
+} from "react-icons/ai";
+
+import Link from "next/link";
+import getUser from "../lib/getUser";
+import { deleteCookie } from "cookies-next";
+import { useRouter } from "next/router";
+
+const MenuItem = ({ href, title, name, focusOn }) => {
+	return (
+		<Link href={href}>
+			<div
+				className={`flex gap-8 items-center  rounded-md px-2 py-1 hover:bg-hover`}
+			>
+				<span
+					className={`font-light text-xl uppercase ${
+						focusOn === name ? "underline underline-offset-8 " : ""
+					}`}
+				>
+					{title}
+				</span>
+			</div>
+		</Link>
+	);
+};
+
+const Navbar = ({ focusOn }) => {
+	const [open, setOpen] = useState(false);
+	const [user, setUser] = useState({});
+	const router = useRouter();
+	useEffect(() => {
+		setUser(getUser());
+	}, []);
+
+	const handleLogout = async () => {
+		deleteCookie("token");
+		deleteCookie("name");
+		setUser(getUser());
+		router.replace("/");
+	};
+
+	return (
+		<div className="px-3 py-8 lg:flex lg:flex-row lg:justify-around stroke-indigo-300 sticky top-0 left-0 bg-white border-b-[1px] border-gray-300">
+			{/* Top section */}
+			<div className="flex flex-row justify-between items-center">
+				<div className="flex flex-row gap-8 items-center">
+					{/* <img
+						src="https://hand-me-down.co.uk/wp-content/uploads/2022/10/print-hand-me-down-logo-with-tagline-full-colour-rgb-251px@72ppi-Copy.jpg"
+						className=" w-10 h-10 bg-cover"
+					/> */}
+
+					<span className="font-semibold text-2xl">HAND ME DOWN </span>
+				</div>
+				<div>
+					<AiOutlineBars
+						className="text-2xl lg:hidden"
+						onClick={() => setOpen(!open)}
+					/>
+				</div>
+			</div>
+
+			{/* Nav items */}
+
+			<div
+				className={`flex flex-col relative gap-5  ${
+					open ? "flex" : "hidden"
+				}  mt-5  justify-center lg:flex lg:flex-row lg:mt-0 `}
+			>
+				<MenuItem focusOn={focusOn} href={"/"} title={"Home"} name="home" />
+				<MenuItem
+					focusOn={focusOn}
+					href={"/about"}
+					title={"About"}
+					name="about"
+				/>
+				<MenuItem
+					focusOn={focusOn}
+					href={"/sell"}
+					title={"Sell Now"}
+					name="sell"
+				/>
+				<Link href="/wishlist">
+					<div
+						className={`flex gap-1 items-center rounded-md px-2 py-1 hover:bg-hover ${
+							focusOn === "wishlist" ? "underline underline-offset-8 " : ""
+						}`}
+					>
+						<span className="font-light text-xl">WISHLIST</span>
+						<AiOutlineHeart className="text-2xl" />
+					</div>
+				</Link>
+				{user.name ? (
+					<>
+						<MenuItem
+							focusOn={focusOn}
+							href={"/profile"}
+							title={user.name + "'s Profile"}
+							name="profile"
+						/>
+
+						<div
+							className={`flex gap-8 items-center rounded-md px-2 py-1  hover:cursor-pointer ${
+								user.name ? "" : "hidden"
+							}`}
+							onClick={handleLogout}
+						>
+							<AiOutlineLogout className="text-2xl" />
+							{/* <span className="font-light text-xl uppercase">{`${
+								user.name ? "logout" : ""
+							}`}</span> */}
+						</div>
+					</>
+				) : (
+					<>
+						<MenuItem
+							focusOn={focusOn}
+							href={"/login"}
+							title={"Login"}
+							name="login"
+						/>
+
+						<MenuItem
+							focusOn={focusOn}
+							href={"/register"}
+							title={"Register"}
+							name="register"
+						/>
+					</>
+				)}
+			</div>
+		</div>
+	);
+};
+
+export default Navbar;
