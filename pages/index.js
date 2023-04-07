@@ -62,6 +62,6 @@ export default function Home(props) {
 export async function getServerSideProps({ req, res }) {
 	console.log("cookies >> ", getCookie("uid", { req, res }));
 	console.log("all cookies >> ", getCookies({ req, res }));
-	const { data } = await axiosInstance.get("/api/products");
+	const { data } = await axiosInstance.get(`/api/products`);
 	return { props: data };
 }
