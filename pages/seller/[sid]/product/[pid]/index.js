@@ -145,7 +145,7 @@ const EditAddedItem = (props) => {
 						<div className="flex flex-row flex-wrap gap-2">
 							{categoriesWatch?.map((category, index) => {
 								return (
-									<div className="flex flex-row">
+									<div className="flex flex-row" key={index}>
 										<input
 											type="text"
 											{...register(`categories.${index}`, {

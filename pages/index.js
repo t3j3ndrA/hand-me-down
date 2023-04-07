@@ -49,7 +49,7 @@ export default function Home(props) {
 			{/* Products */}
 			<div className="flex flex-row justify-center flex-wrap lg:mx-52">
 				{products?.map((product) => {
-					return <ProductCard {...product} />;
+					return <ProductCard {...product} key={product._id} />;
 				})}
 			</div>
 

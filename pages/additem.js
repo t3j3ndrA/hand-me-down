@@ -84,15 +84,17 @@ const AddItem = (props) => {
 						className="w-full h-20 border-dotted border-gray-400 border-[2px] rounded-lg"
 					>
 						<input {...getInputProps()} />
-						<p className="text-center mt-2">Click to add item's images</p>
+						<p className="text-center mt-2">Click to add item{"'"}s images</p>
 					</div>
 					<div className="flex flex-row flex-wrap gap-2">
-						{acceptedFiles.map((file) => {
+						{acceptedFiles.map((file, index) => {
 							return (
 								<Image
+									key={index}
 									width={200}
 									height={200}
 									src={URL.createObjectURL(file)}
+									alt="product image"
 									className="h-[30vh] w-auto object-center"
 								/>
 							);
@@ -146,7 +148,7 @@ const AddItem = (props) => {
 						<div className="flex flex-row flex-wrap gap-2">
 							{categoriesWatch?.map((category, index) => {
 								return (
-									<div className="flex flex-row">
+									<div className="flex flex-row" key={index}>
 										<input
 											type="text"
 											{...register(`categories.${index}`, {

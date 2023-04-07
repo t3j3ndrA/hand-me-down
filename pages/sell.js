@@ -25,7 +25,7 @@ const Sell = (props) => {
 					</Link>
 				</div>
 				{sellingProducts.map((product) => {
-					return <SellingProductCard {...product} />;
+					return <SellingProductCard {...product} key={product._id} />;
 				})}
 			</div>
 		</>

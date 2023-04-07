@@ -52,6 +52,7 @@ const WishListProductCard = ({
 						src={productImages[0]}
 						width={400}
 						height={400}
+						alt="product image"
 						className="w-44 h-[50vh] md:h-[40vh] lg:h-[35vh] object-contain object-center"
 					/>
 				)}

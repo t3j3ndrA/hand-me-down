@@ -54,7 +54,10 @@ const ProductView = (props) => {
 	return (
 		<>
 			<Navbar />
-			<div className="flex flex-col-reverse items-center md:flex-row md:justify-center md:gap-12 my-5 mx-4 md:mx-24">
+			<div
+				key={product._id}
+				className="flex flex-col-reverse items-center md:flex-row md:justify-center md:gap-12 my-5 mx-4 md:mx-24"
+			>
 				<div className="flex flex-col gap-2 uppercase md:w-1/2">
 					<h1 className="uppercase font-bold text-3xl">{product.name}</h1>
 					<p className="uppercase text-gray-800">{product.description}</p>
@@ -67,9 +70,12 @@ const ProductView = (props) => {
 					<div>
 						<p className="font-semibold">Categories :</p>
 						<div className="flex flex-row gap-2 my-2">
-							{product.categories?.map((category) => {
+							{product.categories?.map((category, index) => {
 								return (
-									<span className="px-2 py-1 border-[1px] border-black rounded-sm">
+									<span
+										key={index}
+										className="px-2 py-1 border-[1px] border-black rounded-sm"
+									>
 										{category}
 									</span>
 								);
@@ -102,12 +108,14 @@ const ProductView = (props) => {
 				<div className="md:w-1/2">
 					{product.productImages.length > 0 && (
 						<Carousel autoPlay={true} infiniteLoop={true} className="w-full">
-							{product.productImages.map((image) => {
+							{product.productImages.map((image, index) => {
 								return (
 									<Image
+										key={index}
 										src={image}
 										width={800}
 										height={800}
+										alt="product image"
 										className="h-[80vh] w-72 object-contain object-center"
 									/>
 								);

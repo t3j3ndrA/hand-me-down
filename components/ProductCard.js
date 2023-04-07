@@ -25,6 +25,7 @@ const ProductCard = ({
 						}
 						width={200}
 						height={200}
+						alt="product image"
 						className="shadow-md w-56 h-[60vh] object-contain"
 					/>
 				</div>

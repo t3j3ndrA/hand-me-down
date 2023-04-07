@@ -26,7 +26,13 @@ const Wishlist = (props) => {
 					</h1>
 				</div>
 				{products.map((product) => {
-					return <WishListProductCard {...product} uid={props.uid} />;
+					return (
+						<WishListProductCard
+							{...product}
+							uid={props.uid}
+							key={product._id}
+						/>
+					);
 				})}
 			</div>
 			<ToastContainer position="bottom-right" hideProgressBar theme="dark" />
