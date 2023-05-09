@@ -15,7 +15,7 @@ const ProductCard = ({
 }) => {
 	return (
 		<Link href={`/product/${_id}`}>
-			<div className="mx-4 my-2 w-56 shadow-lg rounded-sm ">
+			<div className="mx-4 my-2 w-full md:w-56 shadow-lg rounded-sm ">
 				<div className="overflow-hidden flex flex-row justify-center">
 					<Image
 						src={
@@ -23,10 +23,10 @@ const ProductCard = ({
 								? productImages[0]
 								: bookImg
 						}
-						width={200}
-						height={200}
+						width={400}
+						height={400}
 						alt="product image"
-						className="shadow-md w-56 h-[60vh] object-contain"
+						className="shadow-md w-42 h-52 object-contain"
 					/>
 				</div>
 

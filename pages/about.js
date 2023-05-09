@@ -11,7 +11,7 @@ const About = () => {
 			<div className="flex flex-col px-4 my-4 lg:flex-row lg:items-center">
 				<div className="mt-2 flex flex-col gap-4 lg:w-1/2 lg:px-28">
 					<p className="font-bold uppercase text-3xl">About US</p>
-					<p className=" text-gray-800 uppercase ">
+					<p className=" text-gray-800 text-justify ">
 						With Hand Me Down, you can now save money and get everything that
 						you need - books, household items and more - from peers near you!
 						Stop spending money on things that are hard to sell after college,

@@ -22,7 +22,7 @@ const MenuItem = ({ href, title, name, focusOn }) => {
 				className={`flex gap-8 items-center  rounded-md px-2 py-1 hover:bg-hover`}
 			>
 				<span
-					className={`font-light text-xl uppercase ${
+					className={`font-light text-xl  ${
 						focusOn === name ? "underline underline-offset-8 " : ""
 					}`}
 				>
@@ -49,7 +49,7 @@ const Navbar = ({ focusOn }) => {
 	};
 
 	return (
-		<div className="px-3 py-8 lg:flex lg:flex-row lg:justify-around stroke-indigo-300 sticky top-0 left-0 bg-white border-b-[1px] border-gray-300">
+		<div className="px-3 py-8 lg:flex lg:flex-row lg:justify-around stroke-indigo-300  bg-white border-b-[1px] border-gray-300">
 			{/* Top section */}
 			<div className="flex flex-row justify-between items-center">
 				<div className="flex flex-row gap-8 items-center">
@@ -94,7 +94,7 @@ const Navbar = ({ focusOn }) => {
 							focusOn === "wishlist" ? "underline underline-offset-8 " : ""
 						}`}
 					>
-						<span className="font-light text-xl">WISHLIST</span>
+						<span className="font-light text-xl">Wishlist</span>
 						<AiOutlineHeart className="text-2xl" />
 					</div>
 				</Link>

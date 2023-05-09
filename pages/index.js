@@ -47,7 +47,7 @@ export default function Home(props) {
 				/>
 			</div>
 			{/* Products */}
-			<div className="flex flex-row justify-center flex-wrap lg:mx-52">
+			<div className="flex flex-row items-stretch justify-center flex-wrap lg:mx-52">
 				{products?.map((product) => {
 					return <ProductCard {...product} key={product._id} />;
 				})}

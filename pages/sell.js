@@ -15,7 +15,7 @@ const Sell = (props) => {
 	return (
 		<>
 			<Navbar focusOn={"sell"} />
-			<div className="flex flex-col md:mx-24">
+			<div className="flex flex-col ">
 				<div className=" my-4 mx-4 flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
 					<h1 className="text-3xl uppercase ">Your items for sell</h1>
 					<Link href="/additem">

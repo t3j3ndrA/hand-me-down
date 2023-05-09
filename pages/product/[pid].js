@@ -58,9 +58,9 @@ const ProductView = (props) => {
 				key={product._id}
 				className="flex flex-col-reverse items-center md:flex-row md:justify-center md:gap-12 my-5 mx-4 md:mx-24"
 			>
-				<div className="flex flex-col gap-2 uppercase md:w-1/2">
-					<h1 className="uppercase font-bold text-3xl">{product.name}</h1>
-					<p className="uppercase text-gray-800">{product.description}</p>
+				<div className="flex flex-col gap-2  md:w-1/2">
+					<h1 className=" font-bold text-3xl">{product.name}</h1>
+					<p className=" text-gray-800">{product.description}</p>
 					<p>
 						<span className="font-semibold">Availabe :</span> {product.counts}
 					</p>
@@ -116,7 +116,7 @@ const ProductView = (props) => {
 										width={800}
 										height={800}
 										alt="product image"
-										className="h-[80vh] w-72 object-contain object-center"
+										className="object-contain object-center"
 									/>
 								);
 							})}
