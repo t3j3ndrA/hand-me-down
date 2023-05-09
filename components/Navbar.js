@@ -108,15 +108,13 @@ const Navbar = ({ focusOn }) => {
 						/>
 
 						<div
-							className={`flex gap-8 items-center rounded-md px-2 py-1  hover:cursor-pointer ${
+							className={`flex gap-2 items-center rounded-md px-2 py-1  hover:cursor-pointer ${
 								user.name ? "" : "hidden"
 							}`}
 							onClick={handleLogout}
 						>
 							<AiOutlineLogout className="text-2xl" />
-							{/* <span className="font-light text-xl uppercase">{`${
-								user.name ? "logout" : ""
-							}`}</span> */}
+							<span className="font-light text-xl">{`${"Logout"}`}</span>
 						</div>
 					</>
 				) : (

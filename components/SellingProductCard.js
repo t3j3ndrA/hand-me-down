@@ -28,7 +28,7 @@ const SellingProductCard = ({
 					)}
 				</div>
 
-				<div className="w-1/2 flex flex-row justify-between mt-1">
+				<div className="md:w-1/2 flex flex-row justify-between mt-1">
 					<div className="flex flex-col ">
 						<span className="uppercase font-semibold">{name}</span>
 						<p>
