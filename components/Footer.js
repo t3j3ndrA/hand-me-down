@@ -15,7 +15,7 @@ const Footer = () => {
 				<span>
 					Stop spending money on things that are hard to sell after college,
 					switch over to Hand Me Down for a smarter way to buy used stuff at
-					reasonable prices and sell the stuff you don't need anymore.
+					reasonable prices and sell the stuff you don&apos;t need anymore.
 				</span>
 			</div>
 			<div className="flex flex-col gap-2 w-full md:w-5/12 lg:w-3/12 ">

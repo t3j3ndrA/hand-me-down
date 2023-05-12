@@ -71,7 +71,7 @@ const AddItem = (props) => {
 		<>
 			<Navbar />
 
-			<h1 className="text-3xl uppercase mx-3 px-10 mt-10">
+			<h1 className="text-center text-3xl font-semibold text-blue-500 mx-3 px-10 mt-10">
 				Add your item for sell
 			</h1>
 			<div className="w-full mx-auto md:w-3/5">
@@ -84,7 +84,7 @@ const AddItem = (props) => {
 						className="w-full h-20 border-dotted border-gray-400 border-[2px] rounded-lg"
 					>
 						<input {...getInputProps()} />
-						<p className="text-center mt-2">Click to add item{"'"}s images</p>
+						<p className="text-center mt-2">Click to add item&apos;s images</p>
 					</div>
 					<div className="flex flex-row flex-wrap gap-2">
 						{acceptedFiles.map((file, index) => {
@@ -200,7 +200,7 @@ const AddItem = (props) => {
 					<button
 						type="submit"
 						disabled={isLoading}
-						className="w-full mt-10 px-4 py-2 uppercase font-semibold bg-black text-white hover:text-black hover:bg-white transition-all duration-500 border-black border-[1px] rounded-2 md:w-1/2 lg:w-42"
+						className="w-full mt-10 px-4 py-2 uppercase font-semibold bg-blue-500 text-white hover:bg-blue-400 transition-all duration-500  rounded-2 md:w-1/2 lg:w-42"
 					>
 						<span className="w-full uppercase ">
 							{isLoading ? <BeatLoader color="white" /> : "Add Item"}

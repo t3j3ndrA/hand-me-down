@@ -7,6 +7,7 @@ import SellingProductCard from "../components/SellingProductCard";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import Link from "next/link";
 import Footer from "../components/Footer";
+import Image from "next/image";
 
 const Sell = (props) => {
 	const [sellingProducts, setSellingProducts] = useState([]);
@@ -16,9 +17,9 @@ const Sell = (props) => {
 	return (
 		<>
 			<Navbar focusOn={"sell"} />
-			<div className="flex flex-col ">
+			<div className="flex flex-col min-h-80vh">
 				<div className=" my-4 mx-4 flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
-					<h1 className="mx-10 text-3xl uppercase text-blue-600 font-semibold">
+					<h1 className="mx-10 text-3xl text-center text-blue-600 font-semibold">
 						Your items for sell
 					</h1>
 					<Link href="/additem">
