@@ -9,6 +9,7 @@ import FormInputField from "../components/FormInputField";
 import { useForm } from "react-hook-form";
 import { BeatLoader } from "react-spinners";
 import Footer from "../components/Footer";
+import { ToastContainer, toast } from "react-toastify";
 const Profile = (props) => {
 	const [user, setUser] = useState(props);
 	const [isLoading, setIsLoading] = useState(false);
@@ -50,6 +51,7 @@ const Profile = (props) => {
 				formData
 			);
 			if (data.success === true) {
+				toast.success("Updated");
 				setUser(data.data);
 			}
 			console.log("resp >> ", data);
@@ -196,15 +198,16 @@ const Profile = (props) => {
 						<button
 							type="submit"
 							disabled={isLoading}
-							className="w-full mt-10 px-4 py-2 uppercase font-semibold bg-black text-white hover:text-black hover:bg-white transition-all duration-500 border-black border-[1px] rounded-2 md:w-1/2 lg:w-42"
+							className="w-full mt-10 px-4 py-2 uppercase font-semibold bg-blue-500 text-white  hover:bg-blue-400 transition-all duration-500  rounded-2 md:w-1/2 lg:w-42"
 						>
 							<span className="w-full uppercase ">
-								{isLoading ? <BeatLoader color="black" /> : "Update"}
+								{isLoading ? <BeatLoader color="white" /> : "Update"}
 							</span>
 						</button>
 					</form>
 				</div>
 			</div>
+			<ToastContainer theme="dark" position="bottom-right" />
 			<Footer />
 		</>
 	);

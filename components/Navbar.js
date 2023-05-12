@@ -53,24 +53,26 @@ const Navbar = ({ focusOn }) => {
 	return (
 		<div className="px-3 py-8 lg:flex lg:flex-row lg:justify-around stroke-indigo-300  bg-white border-b-[1px] border-gray-300">
 			{/* Top section */}
-			<div className="flex flex-row justify-between items-center">
-				<div className="flex flex-row gap-2 items-center">
-					<Image
-						src={require("../public/hmd.png")}
-						alt="logo"
-						className=" w-20 h-auto"
-					/>
-					<span className="font-semibold text-2xl text-blue-500">
-						Hand Me Down{" "}
-					</span>
+			<Link href="/">
+				<div className="flex flex-row justify-between items-center">
+					<div className="flex flex-row gap-2 items-center">
+						<Image
+							src={require("../public/hmd.png")}
+							alt="logo"
+							className=" w-20 h-auto"
+						/>
+						<span className="font-semibold text-2xl text-blue-500">
+							Hand Me Down{" "}
+						</span>
+					</div>
+					<div>
+						<AiOutlineBars
+							className="text-2xl lg:hidden"
+							onClick={() => setOpen(!open)}
+						/>
+					</div>
 				</div>
-				<div>
-					<AiOutlineBars
-						className="text-2xl lg:hidden"
-						onClick={() => setOpen(!open)}
-					/>
-				</div>
-			</div>
+			</Link>
 
 			{/* Nav items */}
 
