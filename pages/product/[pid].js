@@ -42,7 +42,7 @@ const ProductView = (props) => {
 			);
 
 			if (data.success === true) {
-				toast.success("Item added to wishlist ❣️");
+				toast.success("Added to Wishlist");
 			}
 			console.log("resp >> ", data);
 		} catch (err) {
@@ -58,14 +58,27 @@ const ProductView = (props) => {
 				key={product._id}
 				className="flex flex-col-reverse items-center md:flex-row md:justify-center md:gap-12 my-5 mx-4 md:mx-24"
 			>
-				<div className="flex flex-col gap-2  md:w-1/2">
-					<h1 className=" font-bold text-3xl">{product.name}</h1>
+				<div className="flex flex-col gap-3  md:w-1/2">
+					<h1 className=" font-bold text-4xl text-blue-500">{product.name}</h1>
 					<p className=" text-gray-800">{product.description}</p>
 					<p>
 						<span className="font-semibold">Availabe :</span> {product.counts}
 					</p>
 					<p>
 						<span className="font-semibold">Price :</span> {product.price}
+					</p>
+					<p>
+						<span className="font-semibold">Address :</span>
+						{product.pickupAddress}
+					</p>
+					<p>
+						<a
+							href={`https://www.google.com/maps/search/${product.pickupAddress}`}
+							className="bg-blue-500 text-white  hover:bg-blue-400 px-4 py-2 "
+							target="_blank"
+						>
+							View On Map
+						</a>
 					</p>
 					<div>
 						<p className="font-semibold">Categories :</p>
@@ -100,7 +113,7 @@ const ProductView = (props) => {
 					<button
 						type="button"
 						onClick={handleAddToWishList}
-						className="px-4 py-2 uppercase font-semibold bg-black text-white hover:text-black hover:bg-white transition-all duration-500 border-black border-[1px] rounded-2"
+						className="px-4 py-2 uppercase font-semibold bg-blue-500 text-white  hover:bg-blue-400 transition-all duration-500  rounded-2"
 					>
 						Add To Wishlist
 					</button>
@@ -124,6 +137,7 @@ const ProductView = (props) => {
 					)}
 				</div>
 			</div>
+			<div></div>
 			<ToastContainer position="bottom-right" hideProgressBar theme="dark" />
 		</>
 	);

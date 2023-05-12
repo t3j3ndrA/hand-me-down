@@ -42,7 +42,7 @@ const SellingProductCard = ({
 							{description?.length > 300 ? "..." : ""}
 						</span>
 						<Link href={`/seller/${seller}/product/${_id}`}>
-							<button className="w-52 mt-4 px-4 py-2 uppercase font-semibold bg-black text-white hover:text-black hover:bg-white transition-all duration-500 border-black border-[1px] rounded-2 ">
+							<button className="w-52 mt-4 px-4 py-2 uppercase font-semibold bg-blue-500 text-white  hover:bg-blue-400 transition-all duration-500 rounded-2 ">
 								<span className="uppercase ">Edit item</span>
 							</button>
 						</Link>

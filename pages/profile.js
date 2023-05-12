@@ -8,6 +8,7 @@ import Image from "next/image";
 import FormInputField from "../components/FormInputField";
 import { useForm } from "react-hook-form";
 import { BeatLoader } from "react-spinners";
+import Footer from "../components/Footer";
 const Profile = (props) => {
 	const [user, setUser] = useState(props);
 	const [isLoading, setIsLoading] = useState(false);
@@ -204,6 +205,7 @@ const Profile = (props) => {
 					</form>
 				</div>
 			</div>
+			<Footer />
 		</>
 	);
 };

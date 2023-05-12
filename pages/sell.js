@@ -6,6 +6,7 @@ import verifyJWT from "../lib/verifyJWT";
 import SellingProductCard from "../components/SellingProductCard";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import Link from "next/link";
+import Footer from "../components/Footer";
 
 const Sell = (props) => {
 	const [sellingProducts, setSellingProducts] = useState([]);
@@ -17,17 +18,28 @@ const Sell = (props) => {
 			<Navbar focusOn={"sell"} />
 			<div className="flex flex-col ">
 				<div className=" my-4 mx-4 flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
-					<h1 className="text-3xl uppercase ">Your items for sell</h1>
+					<h1 className="mx-10 text-3xl uppercase text-blue-600 font-semibold">
+						Your items for sell
+					</h1>
 					<Link href="/additem">
-						<button className="w-44 flex flex-row items-center justify-center gap-3 text-xl uppercase bg-black text-white fond-semibold px-4 py-2 rounded-sm">
+						<button className="w-44 flex flex-row items-center justify-center gap-3 text-xl uppercase bg-blue-500 text-white  hover:bg-blue-400 fond-semibold px-4 py-2 rounded-sm">
 							<AiOutlinePlusCircle size={24} /> Add item
 						</button>
 					</Link>
 				</div>
-				{sellingProducts.map((product) => {
-					return <SellingProductCard {...product} key={product._id} />;
-				})}
+				{sellingProducts && sellingProducts.length > 0 ? (
+					sellingProducts.map((product) => {
+						return <SellingProductCard {...product} key={product._id} />;
+					})
+				) : (
+					<Image
+						src={require("../public/empty.jpg")}
+						alt="Banner"
+						className="h-50vh md:h-screen w-auto object-contain"
+					/>
+				)}
 			</div>
+			<Footer />
 		</>
 	);
 };

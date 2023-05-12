@@ -30,7 +30,7 @@ const WishListProductCard = ({
 			);
 
 			if (data.success === true) {
-				toast.success("Item removed from wishlist ❣️");
+				toast.success("Removed from Wishlist");
 			}
 			console.log("resp >> ", data);
 		} catch (err) {
@@ -74,14 +74,14 @@ const WishListProductCard = ({
 					<span>{description}</span>
 					<div className="flex flex-row gap-2">
 						<Link href={`/product/${_id}`}>
-							<button className="w-52 mt-4 px-4 py-2 uppercase font-semibold bg-black text-white hover:text-black hover:bg-white transition-all duration-500 border-black border-[1px] rounded-2 ">
+							<button className="w-52 mt-4 px-4 py-2 uppercase font-semibold bg-blue-500 text-white  hover:bg-white hover:text-blue-400 transition-all duration-500 border-blue-500 border-[1px] rounded-2 ">
 								<span className="uppercase ">View More</span>
 							</button>
 						</Link>
 						<button
 							type="button"
 							onClick={handleRemoveFromWishList}
-							className="w-52 mt-4 px-4 py-2 uppercase font-semibold bg-white text-black hover:text-white hover:bg-black transition-all duration-500 border-black border-[1px] rounded-2 "
+							className="w-52 mt-4 px-4 py-2 uppercase font-semibold hover:bg-blue-500 hover:text-white  bg-white text-blue-400 transition-all duration-500 border-blue-500 border-[1px] rounded-2 "
 						>
 							<span className="uppercase "> Remove Item</span>
 						</button>

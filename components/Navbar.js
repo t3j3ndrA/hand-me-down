@@ -14,7 +14,7 @@ import Link from "next/link";
 import getUser from "../lib/getUser";
 import { deleteCookie } from "cookies-next";
 import { useRouter } from "next/router";
-
+import Image from "next/image";
 const MenuItem = ({ href, title, name, focusOn }) => {
 	return (
 		<Link href={href}>
@@ -23,7 +23,9 @@ const MenuItem = ({ href, title, name, focusOn }) => {
 			>
 				<span
 					className={`font-light text-xl  ${
-						focusOn === name ? "underline underline-offset-8 " : ""
+						focusOn === name
+							? "underline underline-offset-8 text-blue-600 "
+							: ""
 					}`}
 				>
 					{title}
@@ -52,13 +54,15 @@ const Navbar = ({ focusOn }) => {
 		<div className="px-3 py-8 lg:flex lg:flex-row lg:justify-around stroke-indigo-300  bg-white border-b-[1px] border-gray-300">
 			{/* Top section */}
 			<div className="flex flex-row justify-between items-center">
-				<div className="flex flex-row gap-8 items-center">
-					{/* <img
-						src="https://hand-me-down.co.uk/wp-content/uploads/2022/10/print-hand-me-down-logo-with-tagline-full-colour-rgb-251px@72ppi-Copy.jpg"
-						className=" w-10 h-10 bg-cover"
-					/> */}
-
-					<span className="font-semibold text-2xl">HAND ME DOWN </span>
+				<div className="flex flex-row gap-2 items-center">
+					<Image
+						src={require("../public/hmd.png")}
+						alt="logo"
+						className=" w-20 h-auto"
+					/>
+					<span className="font-semibold text-2xl text-blue-500">
+						Hand Me Down{" "}
+					</span>
 				</div>
 				<div>
 					<AiOutlineBars
@@ -91,7 +95,9 @@ const Navbar = ({ focusOn }) => {
 				<Link href="/wishlist">
 					<div
 						className={`flex gap-1 items-center rounded-md px-2 py-1 hover:bg-hover ${
-							focusOn === "wishlist" ? "underline underline-offset-8 " : ""
+							focusOn === "wishlist"
+								? "underline  underline-offset-8 text-blue-600 "
+								: ""
 						}`}
 					>
 						<span className="font-light text-xl">Wishlist</span>

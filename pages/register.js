@@ -51,13 +51,13 @@ const Register = () => {
 				<Navbar focusOn={"register"} />
 				<div className="flex flex-wrap w-full items-center justify-center">
 					<div className="flex flex-col w-full md:w-2/3 shadow-xl mt-5">
-						<h1 className="text-3xl font-bold text-center mt-4 uppercase">
+						<h1 className="text-4xl font-bold text-center mt-4 text-blue-500">
 							Create an account
 						</h1>
 
 						<div className="flex flex-col  justify-center px-8 pt-8 my-auto md:justify-start md:pt-0 md:px-24 lg:px-32">
 							<form
-								className="flex flex-col pt-3 md:pt-8 text-black  py-10 px-4 gap-4"
+								className="flex flex-col pt-3 md:pt-8 text-black  py-3 px-4 gap-4"
 								onSubmit={handleSubmit(handleLogin)}
 							>
 								<FormInputField
@@ -157,9 +157,9 @@ const Register = () => {
 								<button
 									type="submit"
 									disabled={isLoading}
-									className="w-full mt-10 px-4 py-2 uppercase font-semibold bg-black text-white hover:text-black hover:bg-white transition-all duration-500 border-black border-[1px] rounded-2"
+									className="w-full mt-3 px-4 py-2  font-semibold bg-blue-500 text-white hover:bg-blue-400 transition-all duration-500 rounded-2"
 								>
-									<span className="w-full uppercase ">
+									<span className="w-full  ">
 										{isLoading ? (
 											<BeatLoader color="black" />
 										) : (
@@ -168,7 +168,7 @@ const Register = () => {
 									</span>
 								</button>
 							</form>
-							<div className="pt-12 pb-12 text-center">
+							<div className=" pb-12 text-center">
 								<p>
 									Already have an account ?
 									<Link href="/login" className="font-semibold underline">

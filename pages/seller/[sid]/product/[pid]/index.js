@@ -54,7 +54,7 @@ const EditAddedItem = (props) => {
 				filledData
 			);
 			if (data.success === true) {
-				toast.success("Item added for selling");
+				toast.success("Updated");
 			}
 			console.log("resp >> ", data);
 		} catch (err) {
@@ -70,7 +70,7 @@ const EditAddedItem = (props) => {
 		<>
 			<Navbar />
 
-			<h1 className="text-3xl uppercase flex flex-row gap-2 items-center text-center mx-4 md:mx-28">
+			<h1 className="text-blue-500  font-semibold text-4xl  flex flex-row gap-2 items-center text-center mx-4 md:mx-28 mt-5">
 				Edit item
 			</h1>
 			<div className="w-full mx-auto md:w-3/5">
@@ -78,25 +78,6 @@ const EditAddedItem = (props) => {
 					className="flex flex-col pt-3 md:pt-8 text-black  py-10 px-4 gap-4 lg:flex-row lg:flex-wrap lg:justify-center"
 					onSubmit={handleSubmit(handleUpdateItem)}
 				>
-					{/* <div
-						{...getRootProps({ className: "dropzone" })}
-						className="w-full h-20 border-dotted border-gray-400 border-[2px] rounded-lg"
-					>
-						<input {...getInputProps()} />
-						<p className="text-center mt-2">Click to add item's images</p>
-					</div> */}
-					{/* <div className="flex flex-row flex-wrap gap-2">
-						{acceptedFiles.map((file) => {
-							return (
-								<Image
-									width={200}
-									height={200}
-									src={URL.createObjectURL(file)}
-									className="h-[30vh] w-auto object-center"
-								/>
-							);
-						})}
-					</div> */}
 					<FormInputField
 						name={"name"}
 						errors={errors}
