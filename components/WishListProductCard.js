@@ -45,20 +45,20 @@ const WishListProductCard = ({
 
 	return (
 		// <Link href={`/product/${_id}`}>
-		<div className="mx-4 my-2 flex flex-row gap-4 md:gap-10 border-b-gray-400 border-b-[1px] shadow-md px-5 py-4">
-			<div className="w-1/2 md:w-1/6">
+		<div className="mx-4 my-2 flex flex-col lg:flex-row gap-4 md:gap-10 border-b-gray-400 border-b-[1px] shadow-md px-5 py-4">
+			<div className="md:w-1/2 lg:w-1/3 lg:h-[50vh]">
 				{productImages.length > 0 && (
 					<Image
 						src={productImages[0]}
 						width={400}
 						height={400}
 						alt="product image"
-						className="w-44 h-[50vh] md:h-[40vh] lg:h-[35vh] object-contain object-center"
+						className=" w-full lg:h-[50vh] object-contain object-center"
 					/>
 				)}
 			</div>
 
-			<div className="flex flex-row justify-between mt-1 w-1/2 md:w-5/6">
+			<div className="md:w-1/2 flex flex-row justify-between mt-1">
 				<div className="flex flex-col justify-between">
 					<span className="uppercase font-semibold">{name}</span>
 					<p>
@@ -71,8 +71,11 @@ const WishListProductCard = ({
 						In <span className="font-semibold uppercase">{condition}</span>{" "}
 						Condition
 					</p>
-					<span>{description}</span>
-					<div className="flex flex-row gap-2">
+					<span>
+						{description?.substring(0, 300)}{" "}
+						{description?.length > 100 ? "..." : ""}
+					</span>
+					<div className="flex flex-col md:flex-row flex-wrap md:gap-2">
 						<Link href={`/product/${_id}`}>
 							<button className="w-52 mt-4 px-4 py-2 uppercase font-semibold bg-blue-500 text-white  hover:bg-white hover:text-blue-400 transition-all duration-500 border-blue-500 border-[1px] rounded-2 ">
 								<span className="uppercase ">View More</span>

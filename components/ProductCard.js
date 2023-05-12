@@ -15,7 +15,7 @@ const ProductCard = ({
 }) => {
 	return (
 		<Link href={`/product/${_id}`}>
-			<div className="md:mx-4 my-4 w-full md:w-56 shadow-lg rounded-sm hover:scale-110 transition-transform duration-500">
+			<div className="md:mx-4 my-4 w-full md:w-56 shadow-lg rounded-sm md:hover:scale-110 transition-transform duration-500">
 				<div className="overflow-hidden flex flex-row justify-center">
 					<Image
 						src={
